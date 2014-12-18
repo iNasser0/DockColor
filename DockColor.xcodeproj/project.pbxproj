@@ -1,0 +1,360 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CDFDD7891A4184C900218668 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFDD7881A4184C900218668 /* Foundation.framework */; };
+		CDFDD7941A4184C900218668 /* DockColor.mm in Sources */ = {isa = PBXBuildFile; fileRef = CDFDD7931A4184C900218668 /* DockColor.mm */; };
+		CDFDD79F1A4184D600218668 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFDD79E1A4184D600218668 /* UIKit.framework */; };
+		CDFDD7A11A4184E300218668 /* libsubstrate.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = CDFDD7A01A4184E300218668 /* libsubstrate.dylib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		CDFDD7851A4184C900218668 /* DockColor.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = DockColor.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDFDD7881A4184C900218668 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CDFDD78D1A4184C900218668 /* control.txt */ = {isa = PBXFileReference; lastKnownFileType = text; name = control.txt; path = Package/DEBIAN/control.txt; sourceTree = "<group>"; };
+		CDFDD78E1A4184C900218668 /* control */ = {isa = PBXFileReference; lastKnownFileType = text; name = control; path = Package/DEBIAN/control; sourceTree = "<group>"; };
+		CDFDD7901A4184C900218668 /* PackageVersion.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PackageVersion.plist; sourceTree = "<group>"; };
+		CDFDD7911A4184C900218668 /* DockColor-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DockColor-Prefix.pch"; sourceTree = "<group>"; };
+		CDFDD7921A4184C900218668 /* DockColor.xm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DockColor.xm; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objcpp; };
+		CDFDD7931A4184C900218668 /* DockColor.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = DockColor.mm; sourceTree = "<group>"; };
+		CDFDD7981A4184C900218668 /* DockColor.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = DockColor.plist; path = Package/Library/MobileSubstrate/DynamicLibraries/DockColor.plist; sourceTree = "<group>"; };
+		CDFDD79E1A4184D600218668 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		CDFDD7A01A4184E300218668 /* libsubstrate.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsubstrate.dylib; path = ../../../../opt/iOSOpenDev/lib/libsubstrate.dylib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CDFDD7811A4184C900218668 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDFDD7A11A4184E300218668 /* libsubstrate.dylib in Frameworks */,
+				CDFDD79F1A4184D600218668 /* UIKit.framework in Frameworks */,
+				CDFDD7891A4184C900218668 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CDFDD77A1A4184C900218668 = {
+			isa = PBXGroup;
+			children = (
+				CDFDD78A1A4184C900218668 /* DockColor */,
+				CDFDD7871A4184C900218668 /* Frameworks */,
+				CDFDD7861A4184C900218668 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CDFDD7861A4184C900218668 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CDFDD7851A4184C900218668 /* DockColor.dylib */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CDFDD7871A4184C900218668 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CDFDD7A01A4184E300218668 /* libsubstrate.dylib */,
+				CDFDD79E1A4184D600218668 /* UIKit.framework */,
+				CDFDD7881A4184C900218668 /* Foundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CDFDD78A1A4184C900218668 /* DockColor */ = {
+			isa = PBXGroup;
+			children = (
+				CDFDD7921A4184C900218668 /* DockColor.xm */,
+				CDFDD7931A4184C900218668 /* DockColor.mm */,
+				CDFDD78B1A4184C900218668 /* Package */,
+				CDFDD78F1A4184C900218668 /* Supporting Files */,
+			);
+			path = DockColor;
+			sourceTree = "<group>";
+		};
+		CDFDD78B1A4184C900218668 /* Package */ = {
+			isa = PBXGroup;
+			children = (
+				CDFDD78C1A4184C900218668 /* DEBIAN */,
+				CDFDD7951A4184C900218668 /* Library */,
+			);
+			name = Package;
+			sourceTree = "<group>";
+		};
+		CDFDD78C1A4184C900218668 /* DEBIAN */ = {
+			isa = PBXGroup;
+			children = (
+				CDFDD78D1A4184C900218668 /* control.txt */,
+				CDFDD78E1A4184C900218668 /* control */,
+			);
+			name = DEBIAN;
+			sourceTree = "<group>";
+		};
+		CDFDD78F1A4184C900218668 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CDFDD7901A4184C900218668 /* PackageVersion.plist */,
+				CDFDD7911A4184C900218668 /* DockColor-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CDFDD7951A4184C900218668 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				CDFDD7961A4184C900218668 /* MobileSubstrate */,
+			);
+			name = Library;
+			sourceTree = "<group>";
+		};
+		CDFDD7961A4184C900218668 /* MobileSubstrate */ = {
+			isa = PBXGroup;
+			children = (
+				CDFDD7971A4184C900218668 /* DynamicLibraries */,
+			);
+			name = MobileSubstrate;
+			sourceTree = "<group>";
+		};
+		CDFDD7971A4184C900218668 /* DynamicLibraries */ = {
+			isa = PBXGroup;
+			children = (
+				CDFDD7981A4184C900218668 /* DockColor.plist */,
+			);
+			name = DynamicLibraries;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		CDFDD7821A4184C900218668 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		CDFDD7841A4184C900218668 /* DockColor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDFDD79B1A4184C900218668 /* Build configuration list for PBXNativeTarget "DockColor" */;
+			buildPhases = (
+				CDFDD77F1A4184C900218668 /* ShellScript */,
+				CDFDD7801A4184C900218668 /* Sources */,
+				CDFDD7811A4184C900218668 /* Frameworks */,
+				CDFDD7821A4184C900218668 /* Headers */,
+				CDFDD7831A4184C900218668 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DockColor;
+			productName = DockColor;
+			productReference = CDFDD7851A4184C900218668 /* DockColor.dylib */;
+			productType = "com.apple.product-type.library.dynamic";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CDFDD77B1A4184C900218668 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				TargetAttributes = {
+					CDFDD7841A4184C900218668 = {
+						CreatedOnToolsVersion = 6.1.1;
+					};
+				};
+			};
+			buildConfigurationList = CDFDD77E1A4184C900218668 /* Build configuration list for PBXProject "DockColor" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CDFDD77A1A4184C900218668;
+			productRefGroup = CDFDD7861A4184C900218668 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CDFDD7841A4184C900218668 /* DockColor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		CDFDD77F1A4184C900218668 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/iOSOpenDev/bin/iosod --xcbp-logos";
+		};
+		CDFDD7831A4184C900218668 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/iOSOpenDev/bin/iosod --xcbp";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CDFDD7801A4184C900218668 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDFDD7941A4184C900218668 /* DockColor.mm in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		CDFDD7991A4184C900218668 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = NO;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/frameworks/**",
+					"$(SDKROOT)/System/Library/PrivateFrameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = NO;
+				iOSOpenDevPath = /opt/iOSOpenDev;
+			};
+			name = Debug;
+		};
+		CDFDD79A1A4184C900218668 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COPY_PHASE_STRIP = YES;
+				EXCLUDED_RECURSIVE_SEARCH_PATH_SUBDIRECTORIES = "*.nib *.lproj *.gch (*) .DS_Store CVS .svn .git .hg *.xcodeproj *.xcode *.pbproj *.pbxproj";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(iOSOpenDevPath)/frameworks/**",
+					"$(SDKROOT)/System/Library/PrivateFrameworks",
+				);
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = "$(iOSOpenDevPath)/include/**";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LIBRARY_SEARCH_PATHS = "$(iOSOpenDevPath)/lib/**";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				iOSOpenDevPath = /opt/iOSOpenDev;
+			};
+			name = Release;
+		};
+		CDFDD79C1A4184C900218668 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DockColor/DockColor-Prefix.pch";
+				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/iOSOpenDev/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = "";
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Debug;
+		};
+		CDFDD79D1A4184C900218668 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "DockColor/DockColor-Prefix.pch";
+				INSTALL_PATH = /Library/MobileSubstrate/DynamicLibraries;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/iOSOpenDev/lib,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				iOSOpenDevBuildPackageOnAnyBuild = NO;
+				iOSOpenDevCopyOnBuild = NO;
+				iOSOpenDevDevice = "";
+				iOSOpenDevInstallOnAnyBuild = NO;
+				iOSOpenDevInstallOnProfiling = YES;
+				iOSOpenDevRespringOnInstall = YES;
+				iOSOpenDevUsePackageVersionPList = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CDFDD77E1A4184C900218668 /* Build configuration list for PBXProject "DockColor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDFDD7991A4184C900218668 /* Debug */,
+				CDFDD79A1A4184C900218668 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDFDD79B1A4184C900218668 /* Build configuration list for PBXNativeTarget "DockColor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDFDD79C1A4184C900218668 /* Debug */,
+				CDFDD79D1A4184C900218668 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CDFDD77B1A4184C900218668 /* Project object */;
+}
