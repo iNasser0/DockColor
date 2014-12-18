@@ -3,11 +3,9 @@
 
 #define kDefaultWhiteColor [[UIColor alloc] initWithRed:1.0f green:1.0f blue:1.0f alpha:1.0f]
 
-
 BOOL enabled;
 UIColor *color;
 float BGalpha;
-
 
 %hook SBDockView
 
@@ -23,9 +21,6 @@ float BGalpha;
         
         [bGView addSubview:viewToAdd];
 }
-   
-
-    
 }
 
 %end
@@ -48,7 +43,6 @@ static void reloadPrefs() {
 BGalpha = !CFPreferencesCopyAppValue(CFSTR("alpha"), CFSTR(PREFSFILENAME)) ? 1 : [(id)CFBridgingRelease(CFPreferencesCopyAppValue(CFSTR("alpha"), CFSTR(PREFSFILENAME))) floatValue];
  
 }
-
 
 %ctor {
     reloadPrefs();
