@@ -6,6 +6,8 @@
 BOOL enabled;
 UIColor *color;
 float BGalpha;
+UIView *viewToAdd;
+UIView *bGView;
 
 %hook SBDockView
 
@@ -13,10 +15,10 @@ float BGalpha;
     %orig;
     if (enabled == YES) {
     
-        UIView *bGView = MSHookIvar<UIView *>(self, "_backgroundView");
+        bGView = MSHookIvar<UIView *>(self, "_backgroundView");
         bGView.alpha = BGalpha / 20.0;
         
-        UIView *viewToAdd = [[UIView alloc] initWithFrame:bGView.frame];
+        viewToAdd = [[UIView alloc] initWithFrame:bGView.frame];
         viewToAdd.backgroundColor = color;
         
         [bGView addSubview:viewToAdd];
@@ -36,12 +38,20 @@ static UIColor* parseColorFromPreferences(NSString* string) {
     return [[UIColor alloc] initWithRed:((rgbValue & 0xFF0000) >> 16)/255.0 green:((rgbValue & 0xFF00) >> 8)/255.0 blue:(rgbValue & 0xFF)/255.0 alpha:alpha];
 }
 static void reloadPrefs() {
-  
-   CFPreferencesAppSynchronize(CFSTR(PREFSFILENAME));
-   enabled =  !CFPreferencesCopyAppValue(CFSTR("enabled"), CFSTR(PREFSFILENAME)) ? YES : [(id)CFBridgingRelease(CFPreferencesCopyAppValue(CFSTR("enabled"), CFSTR(PREFSFILENAME))) boolValue];
+   
+    CFPreferencesAppSynchronize(CFSTR(PREFSFILENAME));
+    enabled =  !CFPreferencesCopyAppValue(CFSTR("enabled"), CFSTR(PREFSFILENAME)) ? YES : [(id)CFBridgingRelease(CFPreferencesCopyAppValue(CFSTR("enabled"), CFSTR(PREFSFILENAME))) boolValue];
     color =!CFPreferencesCopyAppValue(CFSTR("kColor"), CFSTR(PREFSFILENAME)) ? kDefaultWhiteColor : parseColorFromPreferences((id)CFPreferencesCopyAppValue(CFSTR("kColor"), CFSTR(PREFSFILENAME)));
-BGalpha = !CFPreferencesCopyAppValue(CFSTR("alpha"), CFSTR(PREFSFILENAME)) ? 1 : [(id)CFBridgingRelease(CFPreferencesCopyAppValue(CFSTR("alpha"), CFSTR(PREFSFILENAME))) floatValue];
- 
+     BGalpha = !CFPreferencesCopyAppValue(CFSTR("alpha"), CFSTR(PREFSFILENAME)) ? 1 : [(id)CFBridgingRelease(CFPreferencesCopyAppValue(CFSTR("alpha"), CFSTR(PREFSFILENAME))) floatValue];
+    if (enabled == YES) {
+        viewToAdd.backgroundColor =  color;
+        bGView.alpha = BGalpha / 20.0;
+
+    }
+        if (enabled == NO) {
+        bGView.alpha = 1.0;
+        viewToAdd.backgroundColor = [UIColor clearColor];
+    }
 }
 
 %ctor {
