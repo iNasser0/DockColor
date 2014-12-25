@@ -14,7 +14,7 @@ UIView *bGView;
 -(void)layoutSubviews {
     %orig;
     if (enabled == YES) {
-    
+    //
         bGView = MSHookIvar<UIView *>(self, "_backgroundView");
         bGView.alpha = BGalpha / 20.0;
         
