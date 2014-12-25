@@ -6,29 +6,26 @@
 BOOL enabled;
 UIColor *color;
 float BGalpha;
-
+UIView *bGView;
+UIView *viewToAdd;
 %hook SBDockView
 
 -(void)layoutSubviews {
     %orig;
     if (enabled == YES) {
-<<<<<<< HEAD
-    //
+        
         bGView = MSHookIvar<UIView *>(self, "_backgroundView");
-=======
-    
-        UIView *bGView = MSHookIvar<UIView *>(self, "_backgroundView");
->>>>>>> parent of c61b054... Change the color without restringing!
         bGView.alpha = BGalpha / 20.0;
         
-        UIView *viewToAdd = [[UIView alloc] initWithFrame:bGView.frame];
-        viewToAdd.backgroundColor = color;
+         viewToAdd = [[UIView alloc] initWithFrame:bGView.frame];
+         viewToAdd.backgroundColor = color;
         
-        [bGView addSubview:viewToAdd];
+         [bGView addSubview:viewToAdd];
 }
 }
 
 %end
+
 static UIColor* parseColorFromPreferences(NSString* string) {
     NSArray *prefsarray = [string componentsSeparatedByString: @":"];
     NSString *hexString = [prefsarray objectAtIndex:0];
@@ -46,7 +43,14 @@ static void reloadPrefs() {
    enabled =  !CFPreferencesCopyAppValue(CFSTR("enabled"), CFSTR(PREFSFILENAME)) ? YES : [(id)CFBridgingRelease(CFPreferencesCopyAppValue(CFSTR("enabled"), CFSTR(PREFSFILENAME))) boolValue];
     color =!CFPreferencesCopyAppValue(CFSTR("kColor"), CFSTR(PREFSFILENAME)) ? kDefaultWhiteColor : parseColorFromPreferences((id)CFPreferencesCopyAppValue(CFSTR("kColor"), CFSTR(PREFSFILENAME)));
 BGalpha = !CFPreferencesCopyAppValue(CFSTR("alpha"), CFSTR(PREFSFILENAME)) ? 1 : [(id)CFBridgingRelease(CFPreferencesCopyAppValue(CFSTR("alpha"), CFSTR(PREFSFILENAME))) floatValue];
- 
+    if (enabled == YES) {
+        viewToAdd.backgroundColor = color;
+         bGView.alpha = BGalpha / 20.0;
+    }
+    if (enabled == NO) {
+        viewToAdd.backgroundColor = [UIColor clearColor];
+        bGView.alpha = 1.0;
+    }
 }
 
 %ctor {
